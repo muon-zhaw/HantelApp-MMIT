@@ -18,7 +18,10 @@ function updateVariables(data) {
     // update the html elements
     document.getElementById("lastevent").innerHTML = JSON.stringify(data);
     if (data.eventName === "MyEvent") {
-        document.getElementById("counterevent").innerHTML = data.eventData;
+        document.getElementById("counterevent").innerHTML = data.eventData; 
+    }
+    if (data.eventName === "motion-detected") {
+        document.getElementById("motionevent").innerHTML = data.eventData;
     }
 }
 
@@ -40,4 +43,13 @@ async function getCounter() {
 
     // update the html element
     document.getElementById("counter").innerHTML = counter;
+}
+
+async function getLamp() {
+    // request the variable "lamp"
+    var response = await axios.get(rootUrl + "/api/device/0/variable/lamp");
+    var lamp = response.data.result;
+
+    // update the html element
+    document.getElementById("lamp").innerHTML = lamp;
 }

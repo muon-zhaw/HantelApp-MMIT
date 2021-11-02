@@ -3,8 +3,9 @@ const logger = require('./db/logger.js');
 exports.sendEvent = null;
 
 exports.registerEventHandlers = function (source) {
-    //source.addEventListener('MyEvent', handleMyEvent);
-    source.addEventListener('training-start', handleTrainingStart);
+    source.addEventListener('MyEvent', handleMyEvent);
+    source.addEventListener('motion-detected', handleMyEvent);
+    source.addEventListener('training-start', handleTrainingStart); // Es kann der gleiche EventHandler für alle Events verwenden!
     source.addEventListener('training-movements', handleTrainingMovements);
     source.addEventListener('training-cadence-avg', handleTrainingCadenceAverage);
     source.addEventListener('training-cadence', handleTrainingCadence);
