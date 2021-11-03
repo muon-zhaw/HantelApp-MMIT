@@ -21,7 +21,7 @@ function updateVariables(data) {
         document.getElementById("counterevent").innerHTML = data.eventData; 
     }
     if (data.eventName === "training-start") {
-        document.getElementById("training-start").innerHTML = data.eventData;
+        document.getElementById("training-status").innerHTML = "Training aktiv :-)....*go go go!*";
     }
     if (data.eventName === "training-cadence") {
         document.getElementById("training-cadence").innerHTML = data.eventData;
@@ -33,7 +33,7 @@ function updateVariables(data) {
         document.getElementById("training-cadence-avg").innerHTML = data.eventData;
     }
     if (data.eventName === "training-stop") {
-        document.getElementById("training-stop").innerHTML = data.eventData;
+        document.getElementById("training-stop").innerHTML = "Training gestoppt. :-)....*well done!*";
     }
 }
 
