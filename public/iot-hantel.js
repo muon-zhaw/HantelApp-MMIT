@@ -33,7 +33,7 @@ function updateVariables(data) {
         document.getElementById("training-cadence-avg").innerHTML = data.eventData;
     }
     if (data.eventName === "training-stop") {
-        document.getElementById("training-stop").innerHTML = "Training gestoppt. :-)....*well done!*";
+        document.getElementById("training-status").innerHTML = "Training gestoppt. :-)....*well done!*";
     }
 }
 
